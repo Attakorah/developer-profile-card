@@ -91,7 +91,7 @@ function App() {
             {
                 title: "Developer Profile Card",
                 description: "My first React project using components and props.",
-                completed: false
+                completed: true
             }
         ]
     };
@@ -107,6 +107,8 @@ function App() {
             <SkillsList skills={developer.skills} />
 
             <ProjectsList projects={developer.projects} />
+
+            <a href="https://github.com/Attakorah/developer-profile-card" target="_blank">View Code</a>
         </main>
     );
 }
