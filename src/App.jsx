@@ -50,6 +50,15 @@ function ProjectsList({ projects }) {
                         </div>
 
                         <p>{project.description}</p>
+
+                        <a
+                            className="project-link"
+                            href={project.codeUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            View Code
+                        </a>
                     </article>
                 ))}
             </div>
@@ -73,26 +82,30 @@ function App() {
             "React"
         ],
         projects: [
-            {
-                title: "Developer Portfolio v1",
-                description: "A personal portfolio website built with HTML, CSS, and JavaScript.",
-                completed: true
-            },
-            {
-                title: "Task Manager JS",
-                description: "A task manager app built with JavaScript DOM manipulation.",
-                completed: true
-            },
-            {
-                title: "Expense Tracker",
-                description: "An expense tracking app for managing income and spending.",
-                completed: true
-            },
-            {
-                title: "Developer Profile Card",
-                description: "My first React project using components and props.",
-                completed: true
-            }
+          {
+              title: "Developer Portfolio v1",
+              description: "A personal portfolio website built with HTML, CSS, and JavaScript.",
+              completed: true,
+              codeUrl: "https://github.com/Attakorah/developer-portfolio-v1"
+          },
+          {
+              title: "Task Manager JS",
+              description: "A task manager app built with JavaScript DOM manipulation.",
+              completed: true,
+              codeUrl: "https://github.com/Attakorah/task-manager-js"
+          },
+          {
+              title: "Expense Tracker",
+              description: "An expense tracking app for managing income and spending.",
+              completed: true,
+              codeUrl: "https://github.com/Attakorah/expense-tracker-js"
+          },
+          {
+              title: "Developer Profile Card",
+              description: "My first React project using components and props.",
+              completed: true,
+              codeUrl: "https://github.com/Attakorah/developer-profile-card"
+          }
         ]
     };
 
@@ -107,8 +120,6 @@ function App() {
             <SkillsList skills={developer.skills} />
 
             <ProjectsList projects={developer.projects} />
-
-            <a href="https://github.com/Attakorah/developer-profile-card" target="_blank">View Code</a>
         </main>
     );
 }
