@@ -1,0 +1,203 @@
+:root {
+    --bg: #020617;
+    --card: #0f172a;
+    --card-light: #111827;
+    --border: #1e293b;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-soft: rgba(56, 189, 248, 0.12);
+    --success: #22c55e;
+    --warning: #f59e0b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.08), transparent 35%),
+        var(--bg);
+    color: var(--text);
+}
+
+.app {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+    padding: 48px 20px;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    background: linear-gradient(135deg, #0f172a, #111827);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 36px;
+    margin-bottom: 24px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+.school {
+    margin: 18px 0 6px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.role {
+    margin: 0;
+    color: var(--muted);
+}
+
+.avatar {
+    width: 92px;
+    height: 92px;
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    border-radius: 24px;
+    background: var(--accent-soft);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    color: var(--accent);
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.section-card {
+    background: rgba(15, 23, 42, 0.82);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 28px;
+    margin-bottom: 24px;
+}
+
+h2 {
+    margin: 0 0 20px;
+    color: var(--text);
+    font-size: 1.35rem;
+}
+
+h2::before {
+    content: "// ";
+    color: var(--accent);
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-badge {
+    padding: 10px 15px;
+    border-radius: 999px;
+    background: #020617;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.95rem;
+    transition: 0.2s ease;
+}
+
+.skill-badge:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.project-card {
+    background: #020617;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px;
+    transition: 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.project-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.project-card h3 {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.project-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.status {
+    white-space: nowrap;
+    border-radius: 999px;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.completed {
+    color: var(--success);
+    background: rgba(34, 197, 94, 0.12);
+}
+
+.progress {
+    color: var(--warning);
+    background: rgba(245, 158, 11, 0.12);
+}
+
+@media (max-width: 700px) {
+    .profile-header {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        padding: 28px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .avatar {
+        width: 76px;
+        height: 76px;
+        font-size: 1.5rem;
+        border-radius: 20px;
+    }
+}
